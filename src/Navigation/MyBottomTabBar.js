@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import {StyleSheet,TouchableOpacity,View,Text} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {styles} from './StyleNavigation'
 
 import {connect} from 'react-redux'
 
@@ -11,22 +12,9 @@ function MyBottomTabBar({themeColor,descriptors,state,navigation}) {
     }
 
     return (
-      <View style={{marginTop:-20,
-        flexDirection:'row',
-        height: 100,
-        justifyContent:'center',
-        alignItems:'center',
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-        shadowColor: themeColor.grey,
-        shadowOffset: {
-            width: 0,
-            height: -3,
-        },
-        padding:5,
-        shadowOpacity: 0.2,
-        shadowRadius: 5,
-        backgroundColor:themeColor.white,}}>
+      <View style={[{
+        backgroundColor:themeColor.white,
+        shadowColor: themeColor.grey},styles.bottomTab]}>
         {state.routes.map((route, index) => {
             const { options } = descriptors[route.key];
             const focused = state.index === index;
@@ -78,13 +66,7 @@ function MyBottomTabBar({themeColor,descriptors,state,navigation}) {
     );
   }
 
-export const styles = StyleSheet.create({  
-    touchableBottomTab:{
-        flex: 1 ,
-        justifyContent:'center',
-        alignItems:'center'
-      },
-})
+
 mapStateToProps = state =>{
     return {
       themeColor: state.themeRed.themeColor

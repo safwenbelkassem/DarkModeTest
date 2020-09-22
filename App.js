@@ -13,11 +13,10 @@ const App: () => React$Node = () => {
 
   return (
     <AppearanceProvider>
-
-    <Provider store={store}>
-      <Navigation/>
-    </Provider>
-</AppearanceProvider>
+      <Provider store={store}>
+        <Navigation/>
+      </Provider>
+    </AppearanceProvider>
   );
  
 };
