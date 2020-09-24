@@ -27,17 +27,16 @@ class MesCartes extends Component{
         this.props.passToLightMode()
     }
     renderColorScheme(){
-        
-            if (Appearance.getColorScheme() === 'dark'){
+        if (Appearance.getColorScheme() === 'dark'){
                 this.props.passToDarkMode()
-            }else{
+        }else{
                 this.props.passToLightMode()
-            }
+        }
          
     }
     render(){
    
-    this.renderColorScheme()
+    // this.renderColorScheme()
     this.changeAutoDisplay()
      return(
         <View style={[styles.mainContainer,{  backgroundColor: this.props.themeColor.white }]}>
